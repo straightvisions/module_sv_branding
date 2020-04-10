@@ -1,0 +1,12 @@
+.sv100_sv_branding img {
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.sv100_sv_branding a {
+	display: block;
+	text-decoration: none;
+}
+.sv100_sv_branding h3 {
+	text-align:center;
+}
