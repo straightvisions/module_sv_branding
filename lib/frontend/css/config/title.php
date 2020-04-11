@@ -14,7 +14,7 @@
 	}
 
 	if(isset($font['family'])){
-		$properties['font-family']	= $setting->prepare_css_property($text_color,'',', sans-serif;');
+		$properties['font-family']	= $setting->prepare_css_property($font['family'],'',', sans-serif;');
 	}
 
 	echo $setting->build_css(

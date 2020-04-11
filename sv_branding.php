@@ -108,7 +108,7 @@
 		}
 
 		protected function register_scripts(): sv_branding {
-			$this->get_script( 'required' )
+			$this->get_script( 'common' )
 				->set_path( 'lib/frontend/css/common.css' )
 				->set_inline( true )
 				->set_is_enqueued();
@@ -133,7 +133,7 @@
 
 			ob_start();
 
-			$this->get_script( 'required' )->set_inline( $settings['inline'] )->set_is_enqueued();
+			$this->get_script( 'common' )->set_inline( $settings['inline'] )->set_is_enqueued();
 			$this->get_script( 'config' )->set_inline( $settings['inline'] )->set_is_enqueued();
 
 			require ($this->get_path('lib/frontend/tpl/default.php' ));
