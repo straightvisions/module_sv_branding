@@ -45,7 +45,7 @@
 				->set_default_value( get_bloginfo( 'name' ) )
 				->load_type( 'text' );
 
-			// Header - Fonts & Colors
+			// Fonts & Colors
 			$this->get_setting( 'font_family' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
