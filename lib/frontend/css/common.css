@@ -4,7 +4,7 @@
 }
 
 .sv100_sv_branding a {
-	display: block;
+	display: inherit;
 	text-decoration: none;
 }
 .sv100_sv_branding h3 {
