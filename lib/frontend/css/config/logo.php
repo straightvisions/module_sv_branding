@@ -1,3 +1,16 @@
+<?php
+	// Fetches all settings and creates new variables with the setting ID as name and setting data as value.
+	// This reduces the lines of code for the needed setting values.
+	foreach ( $script->get_parent()->get_settings() as $setting ) {
+	${ $setting->get_ID() } = $setting->get_data();
+
+	// If setting is color, it gets the value in the RGB-Format
+	if ( $setting->get_type() === 'setting_color' ) {
+	${ $setting->get_ID() } = $setting->get_rgb( ${ $setting->get_ID() } );
+	}
+	}
+?>
+
 <?php $logo_height = $logo_height > 0 ? $logo_height + 20 : 0; ?>
 
 <?php if($logo_height){ ?>

@@ -10,7 +10,7 @@
 	<h3 class="divider"><?php _e( 'Fonts', 'sv100' ); ?></h3>
 	<div class="sv_setting_flex">
 		<?php
-			echo $module->get_setting( 'font_family' )->form();
+			echo $module->get_setting( 'font' )->form();
 			echo $module->get_setting( 'font_size' )->form();
 			echo $module->get_setting( 'line_height' )->form();
 		?>

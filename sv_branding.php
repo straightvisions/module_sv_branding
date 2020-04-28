@@ -47,7 +47,7 @@
 				->load_type( 'text' );
 
 			// Fonts & Colors
-			$this->get_setting( 'font_family' )
+			$this->get_setting( 'font' )
 				->set_title( __( 'Font Family', 'sv100' ) )
 				->set_description( __( 'Choose a font for your text.', 'sv100' ) )
 				->set_options( $this->get_module( 'sv_webfontloader' )->get_font_options() )
@@ -70,12 +70,14 @@
 			$this->get_setting( 'text_color' )
 				->set_title( __( 'Text Color', 'sv100' ) )
 				->set_default_value( '#1e1e1e' )
+				->set_is_responsive(true)
 				->load_type( 'color' );
 
 			$this->get_setting( 'highlight_color' )
 				->set_title( __( 'Highlight Color', 'sv100' ) )
 				->set_description( __( 'This color is used for highlighting elements, like links on hover/focus.', 'sv100' ) )
 				->set_default_value( '#328ce6' )
+				->set_is_responsive(true)
 				->load_type( 'color' );
 
 			$this->get_setting( 'logo_width' )
