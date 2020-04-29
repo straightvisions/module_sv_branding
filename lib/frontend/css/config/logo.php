@@ -2,13 +2,7 @@
 	// Fetches all settings and creates new variables with the setting ID as name and setting data as value.
 	// This reduces the lines of code for the needed setting values.
 	foreach ( $script->get_parent()->get_settings() as $setting ) {
-	${ $setting->get_ID() } = $setting->get_data();
-
-	// @todo check if fix is needed , get_data returns responsive array
-	// If setting is color, it gets the value in the RGB-Format
-	/*if ( $setting->get_type() === 'setting_color' ) {
-	${ $setting->get_ID() } = $setting->get_rgb( ${ $setting->get_ID() } );
-	}*/
+		${ $setting->get_ID() } = $setting->get_data();
 	}
 ?>
 
@@ -30,14 +24,14 @@
 	}
 }
 
-.sv100_sv_branding .sv100_sv_branding_branding img {
+.sv100_sv_branding img {
 	width: <?php echo $logo_width_mobile < 1 ? 'auto' : $logo_width_mobile . 'px'; ?>;
 	height: <?php echo $logo_height_mobile < 1 ? '100%' : $logo_height_mobile . 'px'; ?>;
 	max-height: <?php echo $logo_height_mobile < 1 ? '60px' : $logo_height_mobile . 'px'; ?>;
 }
 
 @media ( min-width: 1350px ) {
-	.sv100_sv_branding .sv100_sv_branding_branding img {
+	.sv100_sv_branding img {
 		width: <?php echo $logo_width < 1 ? 'auto' : $logo_width . 'px'; ?>;
 		height: <?php echo $logo_height < 1 ? '100%' : $logo_height . 'px'; ?>;
 		max-height: <?php echo $logo_height < 1 ? '100px' : $logo_height . 'px'; ?>;
