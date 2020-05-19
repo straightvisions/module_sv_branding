@@ -29,11 +29,5 @@
 				echo $module->get_setting( 'logo_height' )->form();
 			?>
 		</div>
-		<div class="sv_setting_flex">
-			<?php
-				echo $module->get_setting( 'logo_width_mobile' )->form();
-				echo $module->get_setting( 'logo_height_mobile' )->form();
-			?>
-		</div>
 	<?php } ?>
 </div>

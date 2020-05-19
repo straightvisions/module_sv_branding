@@ -85,6 +85,7 @@
 				->set_description( __( 'Width in pixel. 0 = auto', 'sv100' ) )
 				->set_default_value( 0 )
 				->set_min( 0 )
+				->set_is_responsive(true)
 				->load_type( 'number' );
 
 			$this->get_setting( 'logo_height' )
@@ -92,20 +93,7 @@
 				->set_description( __( 'Height in pixel. 0 = auto', 'sv100' ) )
 				->set_default_value( 0 )
 				->set_min( 0 )
-				->load_type( 'number' );
-
-			$this->get_setting( 'logo_width_mobile' )
-				->set_title( __( 'Logo width (mobile)', 'sv100' ) )
-				->set_description( __( 'Width in pixel. 0 = auto', 'sv100' ) )
-				->set_default_value( 0 )
-				->set_min( 0 )
-				->load_type( 'number' );
-
-			$this->get_setting( 'logo_height_mobile' )
-				->set_title( __( 'Logo height (mobile)', 'sv100' ) )
-				->set_description( __( 'Height in pixel. 0 = auto', 'sv100' ) )
-				->set_default_value( 0 )
-				->set_min( 0 )
+				->set_is_responsive(true)
 				->load_type( 'number' );
 
 			return $this;

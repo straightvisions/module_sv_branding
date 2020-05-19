@@ -1,9 +1,5 @@
-.sv100_sv_branding img {
-	max-width: 100%;
-	object-fit: contain;
-}
-
 .sv100_sv_branding a {
-	display: inherit;
+	display:block;
 	text-decoration: none;
+	line-height:0;
 }
