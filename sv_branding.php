@@ -82,14 +82,14 @@
 
 			$this->get_setting( 'logo_width' )
 				->set_title( __( 'Logo width', 'sv100' ) )
-				->set_description( __( 'Width in pixel. 0 = auto', 'sv100' ) )
+				->set_description( __( 'Width', 'sv100' ) )
 				->set_default_value( 'auto' )
 				->set_is_responsive(true)
 				->load_type( 'text' );
 
 			$this->get_setting( 'logo_height' )
 				->set_title( __( 'Logo height', 'sv100' ) )
-				->set_description( __( 'Height in pixel. 0 = auto', 'sv100' ) )
+				->set_description( __( 'Height', 'sv100' ) )
 				->set_default_value( '80px' )
 				->set_is_responsive(true)
 				->load_type( 'text' );
