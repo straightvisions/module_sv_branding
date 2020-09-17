@@ -15,8 +15,6 @@
 		public function init() {
 			$this->set_module_title( __( 'SV Branding', 'sv100' ) )
 				->set_module_desc( __( 'Manage Site Title & Logo', 'sv100' ) )
-				->load_settings()
-				->register_scripts()
 				->set_section_title( __( 'Branding', 'sv100' ) )
 				->set_section_desc( $this->get_module_desc() )
 				->set_section_type( 'settings' )
@@ -112,6 +110,10 @@
 		}
 
 		public function load( $settings = array() ): string {
+			if(!is_admin()){
+				$this->load_settings()->register_scripts();
+			}
+
 			$settings								= shortcode_atts(
 				array(
 					'inline'						=> true,
