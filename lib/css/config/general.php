@@ -1,5 +1,4 @@
 <?php
-	
 	echo $_s->build_css(
 		'.sv100_sv_branding img',
 		array_merge(

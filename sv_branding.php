@@ -1,25 +1,16 @@
 <?php
 	namespace sv100;
 
-	/**
-	 * @version         4.150
-	 * @author			straightvisions GmbH
-	 * @package			sv100
-	 * @copyright		2019 straightvisions GmbH
-	 * @link			https://straightvisions.com
-	 * @since			1.000
-	 * @license			See license.txt or https://straightvisions.com
-	 */
-
 	class sv_branding extends init {
 		public function init() {
 			$this->set_module_title( __( 'SV Branding', 'sv100' ) )
 				->set_module_desc( __( 'Manage Site Title & Logo', 'sv100' ) )
-				->set_section_title( __( 'Branding', 'sv100' ) )
+				->set_css_cache_active()
+				->set_section_title( $this->get_module_title() )
 				->set_section_desc( $this->get_module_desc() )
 				->set_section_type( 'settings' )
-				->set_section_template_path( $this->get_path( 'lib/backend/tpl/settings.php' ) )
-				->set_section_order(21)
+				->set_section_template_path()
+				->set_section_order(5000)
 				->get_root()
 				->add_section( $this );
 		}
@@ -94,21 +85,6 @@
 
 			return $this;
 		}
-
-		protected function register_scripts(): sv_branding {
-			$this->get_script( 'common' )
-				->set_path( 'lib/frontend/css/common.css' )
-				->set_inline( true )
-				->set_is_enqueued();
-
-			$this->get_script( 'config' )
-				->set_path( 'lib/frontend/css/config.php' )
-				->set_inline( true )
-				->set_is_enqueued();
-
-			return $this;
-		}
-
 		public function load( $settings = array() ): string {
 			if(!is_admin()){
 				$this->load_settings()->register_scripts();
@@ -128,7 +104,7 @@
 			$this->get_script( 'common' )->set_inline( $settings['inline'] )->set_is_enqueued();
 			$this->get_script( 'config' )->set_inline( $settings['inline'] )->set_is_enqueued();
 
-			require ($this->get_path('lib/frontend/tpl/default.php' ));
+			require ($this->get_path('lib/tpl/frontend/default.php' ));
 
 			$output							        = ob_get_contents();
 			ob_end_clean();
