@@ -5,7 +5,13 @@
 				if ( get_header_image() ) {
 					echo '<a href="' . get_home_url() . '"><img src="' . get_header_image() . '" alt="' . get_bloginfo( 'title' ) . '" /></a>';
 				} elseif ( get_custom_logo() ) {
-					echo get_custom_logo();
+					$custom_logo_id		= get_theme_mod( 'custom_logo' );
+					//var_dump($custom_logo_id);
+					$logo				= wp_get_attachment_url( $custom_logo_id );
+					$width				= intval(str_replace('px','',reset($this->get_setting('logo_width')->get_data())));
+					$height				= intval(str_replace('px','',reset($this->get_setting('logo_height')->get_data())));
+
+					echo '<img src="' . esc_url( $logo ) . '" alt="' . get_bloginfo( 'name' ) . '" width="'.($width > 1 ? $width : '').'" height="'.($height > 1 ? $height : '').'">';
 				} else {
 					$post_title = empty( $this->get_setting( 'title' )->get_data() )
 						? get_bloginfo( 'name' )
