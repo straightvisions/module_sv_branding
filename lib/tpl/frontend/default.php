@@ -11,7 +11,7 @@
 					$width				= intval(str_replace('px','',reset($this->get_setting('logo_width')->get_data())));
 					$height				= intval(str_replace('px','',reset($this->get_setting('logo_height')->get_data())));
 
-					echo '<img src="' . esc_url( $logo ) . '" alt="' . get_bloginfo( 'name' ) . '" width="'.($width > 1 ? $width : '').'" height="'.($height > 1 ? $height : '').'">';
+					echo '<a href="' . get_home_url() . '"><img src="' . esc_url( $logo ) . '" alt="' . get_bloginfo( 'name' ) . '" width="'.($width > 1 ? $width : '').'" height="'.($height > 1 ? $height : '').'"></a>';
 				} else {
 					$post_title = empty( $this->get_setting( 'title' )->get_data() )
 						? get_bloginfo( 'name' )
