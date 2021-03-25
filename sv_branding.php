@@ -93,7 +93,7 @@
 			$settings								= shortcode_atts(
 				array(
 					'inline'						=> true,
-					'template'                      => false,
+					'template'					  => false,
 				),
 				$settings,
 				$this->get_module_name()
@@ -106,7 +106,7 @@
 
 			require ($this->get_path('lib/tpl/frontend/default.php' ));
 
-			$output							        = ob_get_contents();
+			$output									= ob_get_contents();
 			ob_end_clean();
 
 			return $output;
