@@ -22,13 +22,13 @@
 				echo $module->get_setting( 'highlight_color' )->form();
 			?>
 		</div>
-		<?php if ( get_custom_logo() ) { ?>
+			<h3 class="divider"><?php _e( 'Logo', 'sv100' ); ?></h3>
+			<p><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" target="_blank"><?php _e('Set Site Logo in Customizer', 'sv100'); ?></a></p>
 			<div class="sv_setting_flex">
 				<?php
 					echo $module->get_setting( 'logo_width' )->form();
 					echo $module->get_setting( 'logo_height' )->form();
 				?>
 			</div>
-		<?php } ?>
 	</div>
 <?php } ?>
